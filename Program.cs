@@ -20,6 +20,13 @@ namespace loop_iteration_practice_Andrew_Creswick{
             FindSum(1);
             FindSum(-3);
             FindSum(100);
+            FindSumOfEvenNumbers(10);
+            FindSumOfEvenNumbers(-5);
+            FindSumOfEvenNumbers(2);
+            FindSumOfEvenNumbers(0);
+            FindSumOfEvenNumbers(1);
+            FindSumOfEvenNumbers(25);
+            FindSumOfEvenNumbers(-25);
         }
         static void Write1ThroughN_While(int n){
             if(n<1){
@@ -111,7 +118,30 @@ namespace loop_iteration_practice_Andrew_Creswick{
             }
         }
         static void FindSumOfEvenNumbers(int n){
-            
+            if(n==0){
+                Console.WriteLine("0");
+            } else if (n%2==0){
+                Console.WriteLine(n);
+            } else if(1<n) {
+                int starterNum = 0;
+                int nextNum = 2;
+                for(int i = 1;i<n;i++){
+                    starterNum=starterNum+nextNum;
+                    nextNum=nextNum+2;
+                    }
+                Console.WriteLine(starterNum);
+            } else {
+                int starterNum = 0;
+                int nextNum=-1;
+                for(int i = 0;i>n;i--){
+                    if(nextNum%2==0){
+                        starterNum=starterNum+nextNum;
+                    } else {
+                        nextNum--;
+                    }                    
+                }
+                Console.WriteLine(starterNum);
+            }
         }
         static void FindSumOfOddNumbers(int n){
             
