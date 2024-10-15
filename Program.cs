@@ -15,6 +15,11 @@ namespace loop_iteration_practice_Andrew_Creswick{
             WriteNThrough1_For(-1);
             WriteNThrough1_For(5);
             WriteNThrough1_For(0);
+            WriteEvensThrough100();
+            FindSum(5);
+            FindSum(1);
+            FindSum(-3);
+            FindSum(100);
         }
         static void Write1ThroughN_While(int n){
             if(n<1){
@@ -75,10 +80,35 @@ namespace loop_iteration_practice_Andrew_Creswick{
             }
         }
         static void WriteEvensThrough100(){
-            
+            int endingNum = 100;
+            for(int starterNum = 2; starterNum<=endingNum;starterNum=starterNum+2){
+                if(starterNum==endingNum){
+                    Console.WriteLine(starterNum);
+                } else {
+                    Console.Write(starterNum+" ");
+                }
+            }
         }
         static void FindSum(int n){
-
+            if(n==0){
+                Console.WriteLine("0");
+            } else if(1<n) {
+                int starterNum = 1;
+                int nextNum = 2;
+                for(int i = 1;i<n;i++){
+                    starterNum=starterNum+nextNum;
+                    nextNum++;
+                }
+                Console.WriteLine(starterNum);
+            } else {
+                int starterNum = 1;
+                int nextNum=-1;
+                for(int i = 0;i>n;i--){
+                    starterNum=starterNum+nextNum;
+                    nextNum--;
+                }
+                Console.WriteLine(starterNum);
+            }
         }
         static void FindSumOfEvenNumbers(int n){
             
