@@ -12,6 +12,9 @@ namespace loop_iteration_practice_Andrew_Creswick{
             WriteNThrough1_While(-1);
             WriteNThrough1_While(5);
             WriteNThrough1_While(0);
+            WriteNThrough1_For(-1);
+            WriteNThrough1_For(5);
+            WriteNThrough1_For(0);
         }
         static void Write1ThroughN_While(int n){
             if(n<1){
@@ -58,7 +61,18 @@ namespace loop_iteration_practice_Andrew_Creswick{
             }
         }
         static void WriteNThrough1_For(int n){
-            
+            if(n<1){
+                OutOfRangeMessage(n);
+            } else {
+                int endingNum = 1;
+                for(int mathN=n; mathN>=endingNum;mathN--){
+                    if(mathN==endingNum){
+                        Console.WriteLine(mathN);
+                    } else {
+                        Console.Write(mathN+" ");
+                    }
+                }
+            }
         }
         static void WriteEvensThrough100(){
             
