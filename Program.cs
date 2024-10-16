@@ -27,6 +27,18 @@ namespace loop_iteration_practice_Andrew_Creswick{
             FindSumOfEvenNumbers(1);
             FindSumOfEvenNumbers(25);
             FindSumOfEvenNumbers(-25);
+            FindSumOfOddNumbers(10);
+            FindSumOfOddNumbers(-5);
+            FindSumOfOddNumbers(1);
+            FindSumOfOddNumbers(2);
+            FindSumOfOddNumbers(25);
+            FindSumOfOddNumbers(-25);
+            OutputRightTriangle(4);
+            OutputRightTriangle(6);
+            OutputRightTriangle(-4);
+            OutputRightTriangle(-6);
+            OutputRightTriangle(0);
+
         }
         static void Write1ThroughN_While(int n){
             if(n<1){
@@ -118,33 +130,56 @@ namespace loop_iteration_practice_Andrew_Creswick{
             }
         }
         static void FindSumOfEvenNumbers(int n){
-            if(n==0){
+            if(n==0 || n==-1 || n==1){
                 Console.WriteLine("0");
-            } else if (n%2==0){
-                Console.WriteLine(n);
-            } else if(1<n) {
-                int starterNum = 0;
-                int nextNum = 2;
-                for(int i = 1;i<n;i++){
-                    starterNum=starterNum+nextNum;
-                    nextNum=nextNum+2;
+            } else if (1<n){
+                int sum=0;
+                int counter=1;
+                while(counter<=n){
+                    if(counter % 2 ==0){
+                        sum+= counter;
                     }
-                Console.WriteLine(starterNum);
-            } else {
-                int starterNum = 0;
-                int nextNum=-1;
-                for(int i = 0;i>n;i--){
-                    if(nextNum%2==0){
-                        starterNum=starterNum+nextNum;
-                    } else {
-                        nextNum--;
-                    }                    
+                    counter++;
                 }
-                Console.WriteLine(starterNum);
+                Console.WriteLine(sum);
+            } else if(n<=1) {
+                int sum=0;
+                int counter=1;
+                while(counter>n){
+                    if(counter % 2 ==0){
+                        sum+= counter;
+                    }
+                    counter--;
+                }
+                Console.WriteLine(sum);
             }
         }
         static void FindSumOfOddNumbers(int n){
-            
+            if(n==0){
+                Console.WriteLine("0");
+            } else if(n==-1 || n==1) {
+                Console.WriteLine("1");
+            } else if (1<n){
+                int sum=0;
+                int counter=1;
+                while(counter<=n){
+                    if(counter % 2 !=0){
+                        sum+= counter;
+                    }
+                    counter++;
+                }
+                Console.WriteLine(sum);
+            } else if(n<=1) {
+                int sum=0;
+                int counter=1;
+                while(counter>=n){
+                    if(counter % 2 !=0){
+                        sum+= counter;
+                    }
+                    counter--;
+                }
+                Console.WriteLine(sum);
+            }
         }
         static void OutputRightTriangle(int _base){
             
