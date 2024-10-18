@@ -182,7 +182,31 @@ namespace loop_iteration_practice_Andrew_Creswick{
             }
         }
         static void OutputRightTriangle(int _base){
-            
+            if(_base==0){
+                OutOfRangeMessage(0);
+            } else if (_base>1){
+                int numOfStars = 1;
+                int startNum=1;
+                while(startNum<=_base){
+                    for(int startNum2=1; startNum2<=numOfStars;startNum2++){
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                    numOfStars++;
+                    startNum++;
+                }
+            } else if(_base<1){
+                int numOfStars = _base;
+                int startNum=1;
+                while(startNum>=_base){
+                    for(int startNum2=1; startNum2>=numOfStars;startNum2--){
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                    numOfStars++;
+                    startNum--;
+                }
+            }
         }
         static void OutOfRangeMessage(int n){
             Console.WriteLine(n+" is out of range.");
